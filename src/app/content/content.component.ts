@@ -16,10 +16,4 @@ export class ContentComponent implements OnInit {
   ngOnInit() {
     this.serv.getStreams();
   }
-
-  clic() {
-    console.log(this.serv.streams);
-    console.log(this.cursor);
-  }
-
 }

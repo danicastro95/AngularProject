@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
 
 const STREAMS = 'https://api.twitch.tv/helix/streams';
 const GAMES = 'https://api.twitch.tv/helix/games/top';
