@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AjaxService } from '../ajax.service';
 
 @Component({
-  selector: 'app-content',
-  templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css']
+  selector: 'app-streams',
+  templateUrl: './streams.component.html',
+  styleUrls: ['./streams.component.css']
 })
-export class ContentComponent implements OnInit {
+export class StreamsComponent implements OnInit {
 
   streams = [];
   cursor;
@@ -15,5 +15,9 @@ export class ContentComponent implements OnInit {
 
   ngOnInit() {
     this.serv.getStreams();
+  }
+
+  onScroll() {
+    this.serv.loadStreams();
   }
 }
