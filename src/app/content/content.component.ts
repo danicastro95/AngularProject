@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AjaxService } from '../ajax.service';
-import { Stream } from '../stream';
 
 @Component({
   selector: 'app-content',
@@ -9,17 +8,18 @@ import { Stream } from '../stream';
 })
 export class ContentComponent implements OnInit {
 
-  streams: Stream[];
+  streams = [];
+  cursor;
 
   constructor(private serv: AjaxService) { }
 
   ngOnInit() {
-    this.serv.getStreams().subscribe(streams => this.streams = streams);
-    console.log(this.streams);
+    this.serv.getStreams();
   }
 
   clic() {
-    console.log(this.streams);
+    console.log(this.serv.streams);
+    console.log(this.cursor);
   }
 
 }
