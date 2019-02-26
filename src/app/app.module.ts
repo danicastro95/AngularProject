@@ -13,6 +13,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { HistoryComponent } from './history/history.component';
 import { GamesComponent } from './games/games.component';
 import { TruncatePipe } from './truncatepipe';
+import { SafePipe } from './safepipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TruncatePipe } from './truncatepipe';
     DetailComponent,
     HistoryComponent,
     GamesComponent,
-    TruncatePipe
+    TruncatePipe,
+    SafePipe
   ],
   imports: [
     BrowserModule,
