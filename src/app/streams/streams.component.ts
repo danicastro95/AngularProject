@@ -24,4 +24,8 @@ export class StreamsComponent implements OnInit {
   getThumbnail(url) {
     return url.replace('{width}x{height}', '300x200');
   }
+
+  openStream(name) {
+    console.log(name);
+  }
 }
