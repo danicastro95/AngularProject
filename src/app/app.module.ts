@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { HistoryComponent } from './history/history.component';
 import { GamesComponent } from './games/games.component';
+import { TruncatePipe } from './truncatepipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GamesComponent } from './games/games.component';
     StreamsComponent,
     DetailComponent,
     HistoryComponent,
-    GamesComponent
+    GamesComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,

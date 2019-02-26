@@ -20,4 +20,8 @@ export class StreamsComponent implements OnInit {
   onScroll() {
     this.serv.loadStreams();
   }
+
+  getThumbnail(url) {
+    return url.replace('{width}x{height}', '300x200');
+  }
 }
