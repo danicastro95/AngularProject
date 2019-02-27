@@ -8,8 +8,9 @@ import { DetailComponent } from './detail/detail.component';
 const routes: Routes = [
   { path: 'streams', component: StreamsComponent },
   { path: 'games', component: GamesComponent },
+  { path: 'streams/:game', component: StreamsComponent },
   { path: 'history', component: HistoryComponent },
-  { path: 'detail/:channel', component: DetailComponent },
+  { path: 'detail/:channel/:game', component: DetailComponent },
   { path: '**', component: StreamsComponent }
 ];
 

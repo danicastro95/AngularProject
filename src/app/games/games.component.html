@@ -1,1 +1,10 @@
-
+<div class="row w-75 mx-auto" infiniteScroll [infiniteScrollDistance]="0.1" [infiniteScrollThrottle]="1000" (scrolled)="onScroll()">
+  <div class="col-12 col-md-6 col-lg-3 my-3" *ngFor="let game of serv.elements">
+    <div class="card text-white h-100 game" [routerLink]="['/streams', game.id]">
+      <img class="card-img-top" src="{{getThumbnail(game.box_art_url)}}" alt="">
+      <div class="card-body">
+        <h5 class="card-title text-dark text-center">{{game.name | truncate:[50]}}</h5>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,7 @@ import { HistoryComponent } from './history/history.component';
 import { GamesComponent } from './games/games.component';
 import { TruncatePipe } from './truncatepipe';
 import { SafePipe } from './safepipe';
+import { ReversePipe } from './reversepipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SafePipe } from './safepipe';
     HistoryComponent,
     GamesComponent,
     TruncatePipe,
-    SafePipe
+    SafePipe,
+    ReversePipe
   ],
   imports: [
     BrowserModule,

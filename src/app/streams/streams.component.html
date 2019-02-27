@@ -1,6 +1,6 @@
 <div class="row w-75 mx-auto" infiniteScroll [infiniteScrollDistance]="0.1" [infiniteScrollThrottle]="1000" (scrolled)="onScroll()">
   <div class="col-12 col-md-6 col-lg-4 my-3" *ngFor="let stream of serv.elements">
-    <div class="card text-white h-100 stream" [routerLink]="['/detail', stream.user_name]">
+    <div class="card text-white h-100 stream" [routerLink]="['/detail', stream.user_name, stream.game_id]" (click)="addToHistory(stream.user_name, stream.game_id)">
       <img class="card-img-top" src="{{getThumbnail(stream.thumbnail_url)}}" alt="">
       <div class="card-body">
         <h5 class="card-title text-dark">{{stream.title | truncate:[50]}}</h5>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AjaxService } from '../ajax.service';
 
 @Component({
   selector: 'app-history',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private serv: AjaxService) { }
 
   ngOnInit() {
   }
 
+  addToHistory(username, gameid) {
+    this.serv.history.push({ user: username, game: gameid });
+  }
 }

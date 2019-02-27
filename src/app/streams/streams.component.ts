@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AjaxService } from '../ajax.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-streams',
@@ -7,25 +8,31 @@ import { AjaxService } from '../ajax.service';
   styleUrls: ['./streams.component.css']
 })
 export class StreamsComponent implements OnInit {
-
-  streams = [];
   cursor;
 
-  constructor(private serv: AjaxService) { }
+  constructor(private serv: AjaxService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.serv.getStreams();
+    if (this.route.snapshot.params.game) {
+      this.serv.getStreamsByGame(this.route.snapshot.params.game);
+    } else {
+      this.serv.getStreams();
+    }
   }
 
   onScroll() {
-    this.serv.loadStreams();
+    if (this.route.snapshot.params.game) {
+      this.serv.loadStreamsByGame(this.route.snapshot.params.game);
+    } else {
+      this.serv.loadStreams();
+    }
   }
 
   getThumbnail(url) {
     return url.replace('{width}x{height}', '300x200');
   }
 
-  openStream(name) {
-    console.log(name);
+  addToHistory(username, gameid) {
+    this.serv.history.push({ user: username, game: gameid });
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AjaxService } from '../ajax.service';
 
 @Component({
   selector: 'app-detail',
@@ -9,11 +10,20 @@ import { ActivatedRoute } from '@angular/router';
 
 export class DetailComponent implements OnInit {
 
-  channel = 'https://player.twitch.tv/?channel=';
+  channel;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private serv: AjaxService) { }
 
   ngOnInit() {
-    this.channel += this.route.snapshot.params.channel;
+    this.channel = 'https://player.twitch.tv/?channel=' + this.route.snapshot.params.channel;
+    this.serv.getStreamsByGame(this.route.snapshot.params.game);
+  }
+
+  onScroll() {
+    this.serv.loadStreamsByGame(this.route.snapshot.params.game);
+  }
+
+  getThumbnail(url) {
+    return url.replace('{width}x{height}', '300x200');
   }
 }

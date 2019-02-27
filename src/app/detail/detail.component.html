@@ -1,2 +1,15 @@
-<iframe class="mx-auto w-100" [src]="channel | safe" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
-
+<div infiniteScroll [infiniteScrollDistance]="0.1" [infiniteScrollThrottle]="1000" (scrolled)="onScroll()">
+  <iframe class="mx-auto w-100" [src]="channel | safe" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+  <h3 class="text-center text-uppercase mt-3">streams similares</h3>
+  <div class="row w-75 mx-auto">
+    <div class="col-12 col-md-6 col-lg-4 my-3" *ngFor="let stream of serv.elements">
+      <div class="card text-white h-100 stream">
+        <img class="card-img-top" src="{{getThumbnail(stream.thumbnail_url)}}" alt="">
+        <div class="card-body">
+          <h5 class="card-title text-dark">{{stream.title | truncate:[50]}}</h5>
+          <p class="card-text text-secondary">{{stream.user_name}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
