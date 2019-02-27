@@ -1,8 +1,0 @@
-<div class="row my-3">
-  <div class="col-8 mx-auto text-center text-uppercase">
-    <h3>Canales visitados recientemente</h3>
-    <ul class="list-unstyled mt-3">
-      <li class="btn-outline-primary" *ngFor="let item of serv.history | reverse" [routerLink]="['/detail', item.user, item.game]" (click)="addToHistory(item.user, item.game)">{{ item.user }}</li>
-    </ul>
-  </div>
-</div>
