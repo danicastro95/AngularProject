@@ -8,7 +8,7 @@ import { AjaxService } from '../ajax.service';
 })
 export class HistoryComponent implements OnInit {
 
-  constructor(private serv: AjaxService) { }
+  constructor(public serv: AjaxService) { }
 
   ngOnInit() {
   }

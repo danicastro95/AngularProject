@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class StreamsComponent implements OnInit {
   cursor;
 
-  constructor(private serv: AjaxService, private route: ActivatedRoute) { }
+  constructor(public serv: AjaxService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     if (this.route.snapshot.params.game) {

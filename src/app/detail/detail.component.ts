@@ -12,7 +12,7 @@ export class DetailComponent implements OnInit {
 
   channel;
 
-  constructor(private route: ActivatedRoute, private serv: AjaxService) { }
+  constructor(private route: ActivatedRoute, public serv: AjaxService) { }
 
   ngOnInit() {
     this.channel = 'https://player.twitch.tv/?channel=' + this.route.snapshot.params.channel;
